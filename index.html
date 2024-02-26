@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deep Linking Test</title>
+</head>
+<body>
+  <h1>Deep Linking Test</h1>
+  <p>Click the button below to trigger deep linking to your Flutter app:</p>
+  <button onclick="openFlutterApp()">Open Flutter App</button>
+
+  <script>
+    function openFlutterApp() {
+      // Replace 'yourapp://' with your Flutter app's deep link scheme
+      var deepLink = 'yourapp://deeplink?data=exampleData';
+      window.location.href = deepLink;
+    }
+  </script>
+</body>
+</html>
