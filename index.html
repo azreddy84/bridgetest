@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Launch App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deep Linking Test</title>
 </head>
 <body>
-    <button onclick="openApp()">Open MyApp</button>
-    
-    <script>
-        function openApp() {
+  <h1>Deep Linking Test</h1>
+  <p>Click the button below to trigger deep linking to your app:</p>
+  <button onclick="openApp()">Open App</button>
+
+  <script>
+     function openApp() {
             var link = "zr://zr-ubi.web";
             
-            // Attempt to open the app
             window.location.href = link;
 
-            // Fallback: Display a message if app not installed
+            // Fallback: Redirect to app store or show a message
             setTimeout(function() {
-                if (document.hidden) {
-                    alert("Please install MyApp to continue.");
-                }
-            }, 1000); // Check if app opened after 1 second
+                window.location.href = "https://www.google.com/";
+            }, 2000); 
         }
-    </script>
+  </script>
 </body>
 </html>
