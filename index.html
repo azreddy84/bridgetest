@@ -7,14 +7,17 @@
 </head>
 <body>
   <h1>Deep Linking Test</h1>
-  <p>Enter the appRef value:</p>
-  <input type="text" id="appRefInput" placeholder="Enter appRef value">
+  <p>Enter values and click the button to launch app:</p>
+  <input type="text" id="appRefInput" placeholder="Enter appRef no"><br><br>
+  <input type="text" id="aadInput" placeholder="Enter Aadhaar no"><br><br>
   <button onclick="openApp()">Open App</button>
 
   <script>
      function openApp() {
             var appRefValue = document.getElementById("appRefInput").value;
-            var link = "zr://zr-ubi.web?appRef=" + appRefValue;
+            var aadValue = document.getElementById("aadInput").value;
+            var link = "zr://zr-ubi.web?appRef=" + appRefValue + "&aad=" + aadValue;
+        
             
             window.location.href = link;
 
