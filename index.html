@@ -7,12 +7,14 @@
 </head>
 <body>
   <h1>Deep Linking Test</h1>
-  <p>Click the button below to trigger deep linking to your app:</p>
+  <p>Enter the appRef value:</p>
+  <input type="text" id="appRefInput" placeholder="Enter appRef value">
   <button onclick="openApp()">Open App</button>
 
   <script>
      function openApp() {
-            var link = "zr://zr-ubi.web?appRef=3499829";
+            var appRefValue = document.getElementById("appRefInput").value;
+            var link = "zr://zr-ubi.web?appRef=" + appRefValue;
             
             window.location.href = link;
 
