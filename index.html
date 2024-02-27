@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Deep Linking Test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launch App</title>
 </head>
 <body>
-  <h1>Deep Linking Test</h1>
-  <p>Click the button below to trigger deep linking to your Flutter app:</p>
-  <button onclick="openFlutterApp()">Open Flutter App</button>
+    <button onclick="openApp()">Open MyApp</button>
+    
+    <script>
+        function openApp() {
+            var link = "zr://zr-ubi.web";
+            
+            // Attempt to open the app
+            window.location.href = link;
 
-  <script>
-    function openFlutterApp() {
-      // Replace 'yourapp://' with your Flutter app's deep link scheme
-      var deepLink = 'yourapp://deeplink?data=exampleData';
-      window.location.href = deepLink;
-    }
-  </script>
+            // Fallback: Display a message if app not installed
+            setTimeout(function() {
+                if (document.hidden) {
+                    alert("Please install MyApp to continue.");
+                }
+            }, 1000); // Check if app opened after 1 second
+        }
+    </script>
 </body>
 </html>
